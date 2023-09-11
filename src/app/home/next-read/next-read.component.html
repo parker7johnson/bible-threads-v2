@@ -1,0 +1,30 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>Bible Reading List?</mat-card-title>
+    </mat-card-header>
+    <mat-card-content fxLayout="row">
+      <!-- Textarea for adding notes (left side) -->
+      <mat-form-field class="notes-textarea">
+        <input matInput placeholder="What to read next?" [(ngModel)]="newNote" (keyup.enter)="addNote()">
+        <button matSuffix mat-icon-button (click)="addNote()" style="color: white;">  <mat-icon style="color: #595959;">send</mat-icon>  </button>
+      </mat-form-field>
+      
+      <mat-divider style="width: 50px;"></mat-divider>
+      <!-- List of notes (right side) -->
+      <div class="notes-list">
+        <div class="center-container">
+            <mat-list>
+                <mat-list-item *ngFor="let note of notes; let i = index" class="list-item">
+                    <span style="color: white;">{{ note }}</span>
+                    <button mat-icon-button (click)="deleteItem(i)" class="delete-button">
+                    <mat-icon style="color: white;">delete_forever</mat-icon>
+                  </button>
+                </mat-list-item>
+            </mat-list>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+    </mat-card-actions>
+  </mat-card>
+  

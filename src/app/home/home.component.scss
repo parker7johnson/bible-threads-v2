@@ -1,0 +1,42 @@
+mat-card {
+    background-color: #333;
+    border-radius: 25px;
+}
+
+.card-container {
+    padding-top: 10px;
+}
+
+mat-card-subtitle,
+mat-card-title,
+mat-card-content,
+button {
+    color: white;
+}
+
+.row-div {
+    border-radius: 10px;
+    background-color: #595959;
+    width: 50%;
+    padding: 15px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    transition: background-color 1.0s ease-in border-radius 1.0s ease-in;
+    height: 225px;
+}
+
+.list-sides {
+    display: flex;
+    flex-direction: row;
+    /* Arrange items horizontally */
+    justify-content: space-between;
+    /* Add space between the items */
+}
+
+.row-div:hover {
+    background-color: #6699cc;
+    border-radius: 25px;
+}
+
+.row-div-left {
+    padding-right: 30px
+}

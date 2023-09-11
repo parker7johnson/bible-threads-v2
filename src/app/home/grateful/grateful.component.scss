@@ -1,0 +1,21 @@
+mat-form-field,
+mat-card-content,
+mat-card {
+    background-color: #595959;
+}
+
+/* notes.component.css */
+
+/* Style the textarea container */
+.notes-textarea {
+    flex: 1;
+    /* Make the textarea expand to fill available space */
+    margin-right: 16px;
+    /* Add spacing between textarea and notes list */
+}
+
+/* Style the notes list container */
+.notes-list {
+    flex: 1;
+    /* Make the notes list expand to fill available space */
+}

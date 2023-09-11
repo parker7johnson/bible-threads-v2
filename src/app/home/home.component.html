@@ -1,0 +1,36 @@
+<div class="card-container">
+    <mat-card>
+        <mat-card-header>
+          <mat-card-title>Welcome Back , {{username}} </mat-card-title>
+          <mat-card-subtitle>Subtitle</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content fxLayout="row">
+            <div class="row-div row-div-left">
+                <div class="list-sides" fxLayout="row">
+                    <app-books style="max-height: 200px;"></app-books>
+                    <mat-divider style="width: 15px;"></mat-divider>
+                    <app-verses style="max-height: 200px;"></app-verses>
+                </div>
+            </div>
+            <mat-divider style="width: 10px;">
+            </mat-divider>
+            <div class="row-div"><app-grateful></app-grateful></div>
+        </mat-card-content> 
+        <mat-card-content fxLayout="row" style="padding-top: 15px;">
+            <div class="row-div row-div-left">
+                <app-verse-of-the-day style="max-height: 200px;"></app-verse-of-the-day>
+            </div>
+            <mat-divider style="width: 10px;">
+            </mat-divider>
+            <div class="row-div">
+                <app-next-read style="max-height: 200px;"></app-next-read>
+            </div>
+        </mat-card-content>         
+        <mat-card-actions>
+          <!-- Action buttons go here -->
+          <button mat-button style="color : white">Button 1</button>
+          <button mat-button style="color : white">Button 2</button>
+        </mat-card-actions>
+      </mat-card>
+      
+</div>

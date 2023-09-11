@@ -1,0 +1,22 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>What I'm Grateful For </mat-card-title>
+    </mat-card-header>
+    <mat-card-content fxLayout="row">
+      <!-- Textarea for adding notes (left side) -->
+      <mat-form-field class="notes-textarea">
+        <textarea matInput placeholder="What are you Grateful for?" [(ngModel)]="newNote" (keyup.enter)="addNote()"></textarea>
+      </mat-form-field>
+      
+      <!-- List of notes (right side) -->
+      <div class="notes-list">
+        <ul>
+          <li *ngFor="let note of notes">{{ note }}</li>
+        </ul>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="addNote()" style="color: white;">Save</button>
+    </mat-card-actions>
+  </mat-card>
+  

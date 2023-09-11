@@ -1,0 +1,29 @@
+<mat-sidenav-container class="sidenav-container" style="background-color: transparent;">
+    <mat-sidenav #sidenav class="sidenav" mode="side" opened>
+      <mat-toolbar class="sidenav-title">
+        <i>Bible Threads</i>
+        <mat-icon style="padding-left: 30px; font-size: 36;">book</mat-icon></mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/dashboard"><span>Dashboard</span></a>
+        <mat-divider></mat-divider>
+        <a mat-list-item routerLink="/profile"><span>Profile</span></a>
+        <mat-divider></mat-divider>
+        <a mat-list-item routerLink="/read"><span>Read</span></a>
+        <mat-divider></mat-divider>
+        <a mat-list-item routerLink="/bookmarks"><span>Bookmarks</span></a>
+        <mat-divider></mat-divider>
+        <a mat-list-item routerLink="/notes"><span>Notes</span></a>
+        <mat-divider></mat-divider>
+        <a mat-list-item routerLink="/history"><span>History</span></a>
+        <mat-divider></mat-divider>
+        <a mat-list-item routerLink="/settings"><span>Settings</span></a>
+        <mat-divider></mat-divider>
+        <p></p>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="content">
+      <app-toolbar></app-toolbar>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

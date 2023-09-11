@@ -1,0 +1,43 @@
+.sidenav-container {
+    height: 100%;
+}
+
+.sidenav {
+    width: 250px;
+    padding-top: 20px;
+    padding-bottom: 25px;
+    border-radius: 25px;
+    background-color: #333;
+}
+
+.content {
+    padding: 20px;
+}
+
+.sidenav-title {
+    color: white;
+    transition: background-color 0.3s ease, border-radius 0.3s ease;
+    background-color: black;
+}
+
+.sidenav-title:hover {
+    background-color: #6699cc;
+    border-radius: 25px;
+}
+
+a {
+
+    transition: background-color 1s ease,
+        border-radius 1s ease,
+        text-align 1s ease;
+}
+
+a:hover {
+    background-color: #6699cc;
+    border-radius: 20px;
+    text-align: center;
+}
+
+span {
+    color: white;
+}
