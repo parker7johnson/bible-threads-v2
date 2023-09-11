@@ -14,6 +14,7 @@ export class ReadComponent {
   selectedChapter : any = 1;
   chapters : any[] = [];
   books : any[] = Object.keys(this.bookMap);
+  currentBookIndex : number = 0;
 
 
   constructor(private bible : BibleService) {
@@ -46,6 +47,7 @@ export class ReadComponent {
   }
 
   loadBook(book : any) {
+    this.generateChapterList(book);
     this.selectedChapter = 1;
     this.chapterText = `Now in chapter ${this.selectedChapter} of book ${book}`
     this.getChapter(this.bookMap[book], this.selectedChapter, 'kjv');
@@ -59,14 +61,15 @@ export class ReadComponent {
   }
 
   loadNextChapter() {
+    this.currentBookIndex = this.books.indexOf(this.selectedBook);
     const maxChapters = this.bookMap[this.selectedBook].chapters;
     console.log(maxChapters)
     if (this.selectedChapter < maxChapters) {
       this.selectedChapter++;
       this.loadChapter(this.selectedChapter);
     } else {
-      const bookNumber = this.chapters[this.books.indexOf(this.selectedBook)];
-      this.selectedBook = this.books[bookNumber+1];
+      console.log(this.books.indexOf(this.selectedBook))
+      this.selectedBook = this.books[++this.currentBookIndex];
       this.loadBook(this.selectedBook)
     }
   }
