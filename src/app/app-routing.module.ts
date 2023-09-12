@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { LandingComponent } from './landing/landing.component';
 import { HomeComponent } from './home/home.component';
 import { ReadComponent } from './read/read.component';
+import { DiscoverComponent } from './discover/discover.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,14 @@ const routes: Routes = [
       {
         path : 'read',
         component : ReadComponent
+      },
+      {
+        path : 'read/:bookName/:bookId/:chapterId',
+        component : ReadComponent
+      },
+      {
+        path : 'discover',
+        component : DiscoverComponent
       }
     ]
   }

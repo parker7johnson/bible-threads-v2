@@ -1,0 +1,32 @@
+.discover-container {
+    padding-top: 10px;
+}
+
+.search-page-card {
+    background-color: #333;
+    border-radius: 25px;
+    height: 87vh ;
+    max-height: 87vh;
+    overflow-y: auto;
+}
+
+.search-result-container {
+    // max-height: 400px;
+    overflow-y: auto;
+}
+
+.search-result-card {
+    background-color: #595959;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 100%; /* Make it take up the full width */
+  }
+  
+  .search-field {
+    width: 50%; /* Set the desired width, such as 80% of the container width */
+    padding-right: 10px;
+  }

@@ -3,6 +3,56 @@
 }
 
 mat-card {
-    background-color: #595959;
+    background-color: #333;
+    height: 87vh;
     border-radius: 25px;
 }
+  
+  /* Make the mat-card-content scrollable */
+  .mat-card-content {
+    max-height: 100%; /* Set a maximum height for the content */
+    overflow-y: auto; /* Enable vertical scrolling when content exceeds the maximum height */
+  }
+
+/* Style the Bible text container */
+.bible-text {
+    font-family: 'Times New Roman', serif; /* Use a serif font for a traditional look */
+    font-size: 18px; /* Adjust the font size as needed */
+    line-height: 2.0; /* Line height for readability */
+    max-width: 800px; /* Adjust the maximum width as needed */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px; /* Add padding for spacing */
+    background-color: #595959; /* Background color for the page */
+    border: 1px solid #ccc; /* Add a border for a book-like appearance */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    overflow-y: auto; /* Enable vertical scrolling when content overflows */
+    max-height: 400px; /* Set a maximum height for scrollability */
+  }
+
+
+  /* Default style for mat-select */
+mat-form-field {
+    width: 50%; /* Ensure the form fields take up the full width of their container */
+    max-width: 200px; /* Optional: Set a maximum width if needed */
+  }
+  
+  /* Style for mat-select when the window width is below a certain breakpoint */
+  @media screen and (max-width: 768px) {
+    mat-form-field {
+      width: 100%; /* Set the width to 100% when the window is smaller */
+    }
+  }
+  
+  /* Style for mat-select when the window width is larger than the breakpoint */
+  @media screen and (min-width: 769px) {
+    mat-form-field {
+      width: 50%; /* Set the width to a percentage value as needed */
+    }
+  }
+
+  span {
+    color: white;
+  }
+  
+  

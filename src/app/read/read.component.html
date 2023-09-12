@@ -6,7 +6,7 @@
         <mat-card-content>
           <mat-form-field>
             <mat-label>Select Book</mat-label>
-            <mat-select [(ngModel)]="selectedBook" (ngModelChange)="loadBook(selectedBook)">
+            <mat-select [(ngModel)]="bookName" (ngModelChange)="loadBook(bookName)">
               <mat-option *ngFor="let book of books" [value]="book" (onSelectionChange)="generateChapterList(book)">{{ book }}</mat-option>
             </mat-select>
           </mat-form-field>
@@ -17,12 +17,16 @@
             </mat-select>
           </mat-form-field>
           <div class="bible-text">
-            <p>{{ chapterText }}</p>
+            <p [innerHTML]="chapterText"></p>
           </div>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-button (click)="loadPreviousChapter()" [disabled]="selectedChapter === 1">Previous Chapter</button>
-          <button mat-button (click)="loadNextChapter()">Next Chapter</button>
+          <button mat-button (click)="loadPreviousChapter()" [disabled]="selectedChapter === 1">
+            <span>Previous Chapter</span>
+          </button>
+          <button mat-button (click)="loadNextChapter()">
+            <span>Next Chapter</span>
+          </button>
         </mat-card-actions>
       </mat-card>
 </div>

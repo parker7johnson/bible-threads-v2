@@ -14,6 +14,10 @@ export class HttpService {
     return this.http.get(url, {params, headers});
   }
 
+  getWithHeaders(url : string) {
+    return this.http.get(url, {headers : Constants.API.SEARCH_HEADER});
+  }
+
   post(url : string, params? : any) {
     const headers = this.headers;
     return this.http.post(url, {params, headers});

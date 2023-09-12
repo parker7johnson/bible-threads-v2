@@ -30,6 +30,6 @@ export class ToolbarComponent {
   }
 
   navigateToRead() {
-    this.router.navigateByUrl('landing/read');
+    this.router.navigateByUrl('landing/read/Genesis/1/1');
   }
 }

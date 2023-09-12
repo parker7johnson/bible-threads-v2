@@ -4,28 +4,27 @@
           <mat-card-title>Welcome Back , {{username}} </mat-card-title>
           <mat-card-subtitle>Subtitle</mat-card-subtitle>
         </mat-card-header>
-        <mat-card-content fxLayout="row">
-            <div class="row-div row-div-left">
-                <div class="list-sides" fxLayout="row">
-                    <app-books style="max-height: 200px;"></app-books>
-                    <mat-divider style="width: 15px;"></mat-divider>
-                    <app-verses style="max-height: 200px;"></app-verses>
+          <mat-card-content fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px">
+            <div class="row-div" fxFlex="50%" fxFlex.xs="100%" style="height: 100%;">
+                <div class="list-sides" fxLayout="row" style="height: 100%;">
+                    <app-books fxFlex="50%" style="height: 100%;"></app-books>
+                    <mat-divider fxFlex="10px"></mat-divider>
+                    <app-verses fxFlex="50%" style="height: 100%;"></app-verses>
                 </div>
-            </div>
-            <mat-divider style="width: 10px;">
-            </mat-divider>
-            <div class="row-div"><app-grateful></app-grateful></div>
-        </mat-card-content> 
-        <mat-card-content fxLayout="row" style="padding-top: 15px;">
-            <div class="row-div row-div-left">
-                <app-verse-of-the-day style="max-height: 200px;"></app-verse-of-the-day>
-            </div>
-            <mat-divider style="width: 10px;">
-            </mat-divider>
-            <div class="row-div">
-                <app-next-read style="max-height: 200px;"></app-next-read>
-            </div>
-        </mat-card-content>         
+                </div>
+                <div class="row-div" fxFlex="50%" fxFlex.xs="100%" style="height: 254px;">
+                    <app-grateful style="height: 100%;"></app-grateful>
+                </div>
+            </mat-card-content>
+
+            <mat-card-content fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px" style="padding-top: 15px;">
+                <div class="row-div" fxFlex="50%" fxFlex.xs="100%" style="height: 254px;">
+                <app-verse-of-the-day style="height: 100%;"></app-verse-of-the-day>
+                </div>
+                <div class="row-div" fxFlex="50%" fxFlex.xs="100%" style="height: 254px;">
+                <app-next-read style="height: 100%;"></app-next-read>
+                </div>
+            </mat-card-content>            
         <mat-card-actions>
           <!-- Action buttons go here -->
           <button mat-button style="color : white">Button 1</button>

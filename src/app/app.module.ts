@@ -18,7 +18,8 @@ import { BooksComponent } from './home/favorites/books/books.component';
 import { VersesComponent } from './home/favorites/verses/verses.component';
 import { VerseOfTheDayComponent } from './home/verse-of-the-day/verse-of-the-day.component';
 import { NextReadComponent } from './home/next-read/next-read.component';
-import { ReadComponent } from './read/read.component'
+import { ReadComponent } from './read/read.component';
+import { DiscoverComponent } from './discover/discover.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ReadComponent } from './read/read.component'
     VersesComponent,
     VerseOfTheDayComponent,
     NextReadComponent,
-    ReadComponent
+    ReadComponent,
+    DiscoverComponent,
   ],
   imports: [
     BrowserModule,

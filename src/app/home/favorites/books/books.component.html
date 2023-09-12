@@ -1,13 +1,15 @@
-<mat-card>
-    <mat-card-header>
-      <mat-card-title>Your Favorite Books</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <mat-list style="color: white;">
-        <mat-list-item *ngFor="let book of favoriteBooks" style="color: white;">
-          <span style="color: white;">{{ book }}</span>
-        </mat-list-item>
-      </mat-list>
-    </mat-card-content>
+<div style="height: calc(100% - 30px);">
+<mat-card fxFill >
+  <mat-card-header>
+    <mat-card-title>Your Favorite Books</mat-card-title>
+  </mat-card-header>
+  <mat-card-content fxFlex>
+    <mat-list style="color: white;" fxFlex>
+      <mat-list-item *ngFor="let book of favoriteBooks" style="color: white;">
+        <span style="color: white;">{{ book }}</span>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
 </mat-card>
-  
+</div>
+

@@ -1,68 +1,94 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BibleService } from '../common/services/bible.service';
 import { Constants } from '../constants';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-read',
   templateUrl: './read.component.html',
   styleUrls: ['./read.component.scss']
 })
-export class ReadComponent {
+export class ReadComponent implements OnInit{
   bookMap : any = Constants.BIBLE.bibleBooks;
+  reverseBookMap : any = Constants.BIBLE.REVERSED_BOOK_IDS;
+  books : any[] = Object.keys(this.bookMap);
   chapterText : string = '';
-  selectedBook : any = '';
+  currentBookIndex : number = 0;
+  selectedBook : any = this.bookMap[this.books[0]].number;
   selectedChapter : any = 1;
   chapters : any[] = [];
-  books : any[] = Object.keys(this.bookMap);
-  currentBookIndex : number = 0;
+  clickableVerses: string[] = [];
+  bibleVersion : string = 'kjv'
+  bookName : string = ''
 
+  constructor(private bible : BibleService, 
+              private http : HttpClient,
+              private route : ActivatedRoute) {
+    
 
-  constructor(private bible : BibleService) {
-    this.getChapter(Constants.BIBLE.bibleBooks['James'], 1, 'kjv')
   }
 
+  ngOnInit(): void {
+    if (this.route.params) {
+      this.route.params.subscribe((params : any) => {
+        this.selectedBook = params['bookId'];
+        this.selectedChapter = params['chapterId'];
+        this.bookName = params['bookName']
+      });
+    } else {
+      this.bookName = 'Genesis';
+      this.selectedBook = '1';
+    }
+    this.loadBook(this.selectedBook)
+  }
 
   getChapter(bookId : any, chapterId : any, versionId : any) {
-    // this.bible.getChapter(bookId, chapterId, versionId).subscribe((response : any) => {
-    //   console.log(response)
-    //   response.forEach((verse : any) => {
-    //     this.chapterText += `${verse.v} ${verse.t}`;
-    //   });
-    // });
+    this.clickableVerses = [];
+    this.chapterText = "";
+    this.bible.getChapter(String (bookId), String (chapterId), String (versionId)).subscribe((response : any) => {
+      console.log(response)
+      response.forEach((verse : any) => {
+        const clickableVerse = `<span class="clickable-verse" data-verse="${verse.v}"><a>${verse.v} ${verse.t}</a> </span> `;
+        this.clickableVerses.push(clickableVerse);
+      });
+      this.chapterText = this.clickableVerses.join('');
+    });
   }
 
   generateChapterList(book : any) {
+    console.log(book)
     this.selectedBook = book
     this.selectedChapter = 1;
     this.chapters = [];
-    let numChapters = this.bookMap[book].chapters;
+    console.log(this.bookMap[this.bookName])
+    let numChapters = this.bookMap[this.bookName].chapters;
     for (let i = 0; i < numChapters; i++) {
       this.chapters.push(i+1);
     }
   }
 
   loadChapter(chapter : any) {
-    this.chapterText = `Now in chapter ${chapter} of book ${this.selectedBook}`
-    this.getChapter(this.bookMap[this.selectedBook], chapter, 'kjv');
+    this.getChapter(this.bookMap[this.bookName].number, chapter, this.bibleVersion);
   }
 
   loadBook(book : any) {
     this.generateChapterList(book);
     this.selectedChapter = 1;
-    this.chapterText = `Now in chapter ${this.selectedChapter} of book ${book}`
-    this.getChapter(this.bookMap[book], this.selectedChapter, 'kjv');
+    this.getChapter(this.bookMap[this.bookName].number, this.selectedChapter, this.bibleVersion);
   }
 
   loadPreviousChapter(){
     if (this.selectedChapter - 1 > 0) {
       this.selectedChapter--;
-      this.getChapter(this.bookMap[this.selectedBook], this.selectedChapter, 'kjv');  
+      this.getChapter(this.bookMap[this.books[this.selectedBook]].number, this.selectedChapter, this.bibleVersion);  
     }
   }
 
   loadNextChapter() {
     this.currentBookIndex = this.books.indexOf(this.selectedBook);
-    const maxChapters = this.bookMap[this.selectedBook].chapters;
+    const maxChapters = this.bookMap[this.books[this.selectedBook]].chapters;
     console.log(maxChapters)
     if (this.selectedChapter < maxChapters) {
       this.selectedChapter++;
