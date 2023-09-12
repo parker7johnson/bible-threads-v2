@@ -1,12 +1,22 @@
 <mat-card>
-    <mat-card-header>
+  <mat-card-header>
       <mat-card-title>Your Favorite Verses</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
+  </mat-card-header>
+  <mat-card-content>
       <mat-list style="color: white;">
-        <mat-list-item *ngFor="let verse of favoriteVerses" style="color: white;">
-          <span style="color: white;">{{ verse }}</span>
+        <mat-list-item *ngFor="let verse of favoriteVerses; let i = index" style="color: white;">
+          <div style="color: white; display: flex; align-items: center; justify-content: space-between;">
+              <a [routerLink]="navigateToVerse(i)">{{ verse.enteredText }}</a>
+              <mat-icon mat-icon-button style="color: white; margin-left: auto;" (click)="deleteFavorite(i)">delete</mat-icon>
+          </div>
         </mat-list-item>
       </mat-list>
-    </mat-card-content>
+      <!-- Add an input field for entering a favorite verse -->
+      <mat-form-field style="width: 200px; height: 78px;"> <!-- Adjust width and height as needed -->
+        <input matInput placeholder="Book N:NN" [(ngModel)]="addedVerse" (keyup.enter)="addToFavoritesList(addedVerse)">
+        <button mat-icon-button matSuffix (click)="addToFavoritesList(addedVerse)">
+          <mat-icon style="color: #333;">add</mat-icon>
+        </button>
+      </mat-form-field>
+  </mat-card-content>
 </mat-card>

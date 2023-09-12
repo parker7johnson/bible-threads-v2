@@ -5,6 +5,8 @@
 mat-card {
     background-color: #333;
     height: 87vh;
+    max-height: 87vh;
+    overflow-y: auto;
     border-radius: 25px;
 }
   
@@ -19,17 +21,19 @@ mat-card {
     font-family: 'Times New Roman', serif; /* Use a serif font for a traditional look */
     font-size: 18px; /* Adjust the font size as needed */
     line-height: 2.0; /* Line height for readability */
-    max-width: 800px; /* Adjust the maximum width as needed */
+    max-width: 80%; /* Adjust the maximum width as needed */
     margin: 0 auto; /* Center the container horizontally */
     padding: 20px; /* Add padding for spacing */
     background-color: #595959; /* Background color for the page */
     border: 1px solid #ccc; /* Add a border for a book-like appearance */
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
-    overflow-y: auto; /* Enable vertical scrolling when content overflows */
-    max-height: 400px; /* Set a maximum height for scrollability */
+
   }
 
+  .verse-number {
+    color: red;
+  }
 
   /* Default style for mat-select */
 mat-form-field {
@@ -54,5 +58,7 @@ mat-form-field {
   span {
     color: white;
   }
+  
+  
   
   

@@ -82,13 +82,13 @@ export class ReadComponent implements OnInit{
   loadPreviousChapter(){
     if (this.selectedChapter - 1 > 0) {
       this.selectedChapter--;
-      this.getChapter(this.bookMap[this.books[this.selectedBook]].number, this.selectedChapter, this.bibleVersion);  
+      this.getChapter(this.bookMap[this.bookName].number, this.selectedChapter, this.bibleVersion);  
     }
   }
 
   loadNextChapter() {
     this.currentBookIndex = this.books.indexOf(this.selectedBook);
-    const maxChapters = this.bookMap[this.books[this.selectedBook]].chapters;
+    const maxChapters = this.bookMap[this.bookName].chapters;
     console.log(maxChapters)
     if (this.selectedChapter < maxChapters) {
       this.selectedChapter++;
