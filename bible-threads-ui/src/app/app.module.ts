@@ -20,6 +20,7 @@ import { VerseOfTheDayComponent } from './home/verse-of-the-day/verse-of-the-day
 import { NextReadComponent } from './home/next-read/next-read.component';
 import { ReadComponent } from './read/read.component';
 import { DiscoverComponent } from './discover/discover.component';
+import { LearnComponent } from './learn/learn.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { DiscoverComponent } from './discover/discover.component';
     NextReadComponent,
     ReadComponent,
     DiscoverComponent,
+    LearnComponent,
   ],
   imports: [
     BrowserModule,

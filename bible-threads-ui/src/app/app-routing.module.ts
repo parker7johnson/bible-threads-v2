@@ -5,6 +5,7 @@ import { LandingComponent } from './landing/landing.component';
 import { HomeComponent } from './home/home.component';
 import { ReadComponent } from './read/read.component';
 import { DiscoverComponent } from './discover/discover.component';
+import { LearnComponent } from './learn/learn.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,10 @@ const routes: Routes = [
       {
         path : 'discover',
         component : DiscoverComponent
+      },
+      {
+        path : 'learn',
+        component : LearnComponent
       }
     ]
   }
