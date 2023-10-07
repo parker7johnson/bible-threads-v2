@@ -19,7 +19,7 @@ export class ReadComponent implements OnInit{
   selectedBook : any = this.bookMap[this.books[0]].number;
   selectedChapter : any = 1;
   chapters : any[] = [];
-  clickableVerses: string[] = [];
+  clickableVerses: any[] = [];
   bibleVersion : string = 'kjv'
   bookName : string = ''
 
@@ -44,16 +44,18 @@ export class ReadComponent implements OnInit{
     this.loadBook(this.selectedBook)
   }
 
+  showComments() {
+    
+  }
+
   getChapter(bookId : any, chapterId : any, versionId : any) {
     this.clickableVerses = [];
     this.chapterText = "";
     this.bible.getChapter(String (bookId), String (chapterId), String (versionId)).subscribe((response : any) => {
       console.log(response)
       response.forEach((verse : any) => {
-        const clickableVerse = `<span class="clickable-verse" data-verse="${verse.v}"><a>${verse.v} ${verse.t}</a> </span> `;
-        this.clickableVerses.push(clickableVerse);
+        this.clickableVerses.push(verse);
       });
-      this.chapterText = this.clickableVerses.join('');
     });
   }
 

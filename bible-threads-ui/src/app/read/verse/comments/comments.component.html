@@ -1,0 +1,19 @@
+<mat-card>
+    <div class="comment-content">
+        <p class="comment-author">{{comment.author}}</p>
+        <p class="comment">{{ comment.originalContent }}</p>
+    </div>
+
+  <!-- Reply form here (optional) -->
+  <div *ngIf="showReplyForm">
+    <p class="comment reply">comment reply box here</p>
+  </div>
+
+  <button mat-button (click)="toggleReply()">{{toggleReplyToSend()}}</button>
+
+  
+  <!-- Display child comments recursively -->
+  <div *ngFor="let childComment of comment.replies">
+    <app-comments></app-comments>
+  </div>
+</mat-card>

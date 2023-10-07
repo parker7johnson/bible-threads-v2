@@ -21,6 +21,8 @@ import { NextReadComponent } from './home/next-read/next-read.component';
 import { ReadComponent } from './read/read.component';
 import { DiscoverComponent } from './discover/discover.component';
 import { LearnComponent } from './learn/learn.component';
+import { VerseComponent } from './read/verse/verse.component';
+import { CommentsComponent } from './read/verse/comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { LearnComponent } from './learn/learn.component';
     ReadComponent,
     DiscoverComponent,
     LearnComponent,
+    VerseComponent,
+    CommentsComponent,
   ],
   imports: [
     BrowserModule,
