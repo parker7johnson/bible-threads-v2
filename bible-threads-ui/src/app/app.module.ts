@@ -23,6 +23,12 @@ import { DiscoverComponent } from './discover/discover.component';
 import { LearnComponent } from './learn/learn.component';
 import { VerseComponent } from './read/verse/verse.component';
 import { CommentsComponent } from './read/verse/comments/comments.component';
+import { RegisterComponent } from './register/register.component';
+import { fireBaseConfig } from 'firebaseconfig';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 @NgModule({
   declarations: [
@@ -41,6 +47,7 @@ import { CommentsComponent } from './read/verse/comments/comments.component';
     LearnComponent,
     VerseComponent,
     CommentsComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +57,9 @@ import { CommentsComponent } from './read/verse/comments/comments.component';
     MaterialModule,
     ReactiveFormsModule,
     FlexLayoutModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(fireBaseConfig),
+    AngularFireAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

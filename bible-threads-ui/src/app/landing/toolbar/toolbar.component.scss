@@ -14,8 +14,10 @@
   }
 
   .nav-link {
-    padding-left: 30px;
-    padding-right: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .divider {

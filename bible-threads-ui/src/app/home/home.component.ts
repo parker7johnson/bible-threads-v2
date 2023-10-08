@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
-  username : string | null = localStorage.getItem('username');
+  username : string | null = localStorage.getItem('userName');
 
 }

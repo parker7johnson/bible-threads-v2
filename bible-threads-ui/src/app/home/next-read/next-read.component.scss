@@ -1,54 +1,16 @@
 mat-card {
-    background-color: #595959;
+  background-color: #595959;
+  max-height: 224px;
 }
 
 mat-form-field {
-    max-height: 78px;
+  max-width: 100%;
 }
 
-.notes-list {
-    width: 15rem;
-    max-height: 115px;
-    overflow-y: auto;
-    display: flex;
-    align-items: center;
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns, adjust as needed */
+  gap: 10px; /* Gap between columns, adjust as needed */
 }
 
-.center-container {
-    flex: 1; /* Allow the container to expand to fill available space horizontally */
-  }
 
-/* Add this CSS to your component's CSS file (e.g., my-component.css) */
-
-.list-item {
-    display: flex;
-    align-items: center;
-  }
-  
-  .delete-button {
-    margin-left: auto; /* Push the delete button to the right */
-    background-color: transparent; /* Make the button transparent */
-    border: none; /* Remove button border */
-    cursor: pointer; /* Change cursor to pointer on hover */
-  }
-  
-  .delete-button:hover {
-    background-color: #ff0000; /* Change background color on hover */
-  }
-
-  /* Add this CSS to your component's CSS file (e.g., my-component.css) */
-  
-  /* Adjust margin as needed */
-  .mat-form-field {
-    margin: 0 auto;
-    max-width: 300px; /* Adjust the maximum width as needed */
-  }
-
-  .centered-text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1; /* Allow the text to expand to fill the available space */
-  }
-  
-  

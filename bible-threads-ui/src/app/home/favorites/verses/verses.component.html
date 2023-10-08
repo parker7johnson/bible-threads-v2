@@ -3,6 +3,16 @@
       <mat-card-title>Your Favorite Verses</mat-card-title>
   </mat-card-header>
   <mat-card-content>
+    <div class="grid-container">
+
+        <!-- Add an input field for entering a favorite verse -->
+      <mat-form-field style="width: 200px; height: 78px;"> <!-- Adjust width and height as needed -->
+        <input matInput placeholder="Book N:NN" [(ngModel)]="addedVerse" (keyup.enter)="addToFavoritesList(addedVerse)">
+        <button mat-icon-button matSuffix (click)="addToFavoritesList(addedVerse)">
+          <mat-icon style="color: #333;">add</mat-icon>
+        </button>
+      </mat-form-field>
+
       <mat-list style="color: white;">
         <mat-list-item *ngFor="let verse of favoriteVerses; let i = index" style="color: white;">
           <div style="color: white; display: flex; align-items: center; justify-content: space-between;">
@@ -11,12 +21,6 @@
           </div>
         </mat-list-item>
       </mat-list>
-      <!-- Add an input field for entering a favorite verse -->
-      <mat-form-field style="width: 200px; height: 78px;"> <!-- Adjust width and height as needed -->
-        <input matInput placeholder="Book N:NN" [(ngModel)]="addedVerse" (keyup.enter)="addToFavoritesList(addedVerse)">
-        <button mat-icon-button matSuffix (click)="addToFavoritesList(addedVerse)">
-          <mat-icon style="color: #333;">add</mat-icon>
-        </button>
-      </mat-form-field>
+    </div>
   </mat-card-content>
 </mat-card>

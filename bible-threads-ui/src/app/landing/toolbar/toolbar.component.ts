@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,7 +10,8 @@ import { Router } from '@angular/router';
 export class ToolbarComponent {
 
 
-  constructor(private router : Router) {
+  constructor(private router : Router,
+              private afAuth : AngularFireAuth) {
 
   }
 
@@ -31,5 +33,17 @@ export class ToolbarComponent {
 
   navigateToRead() {
     this.router.navigateByUrl('landing/read/Genesis/1/1');
+  }
+
+  onLogout() {
+    this.afAuth.signOut()
+      .then(() => {
+        console.log('localStorage before logout : ' + Object.keys(localStorage));
+        localStorage.clear();
+        console.log('localStorage after logout : ' + Object.keys(localStorage));
+
+        this.router.navigateByUrl('/login');
+      })
+      .catch(error => alert(error));
   }
 }

@@ -40,3 +40,33 @@ button {
 .row-div-left {
     padding-right: 30px
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Create two equally sized columns */
+    grid-template-rows: repeat(2, 254px); /* Two rows with a fixed height of 254px */
+    gap: 10px; /* Gap between grid items */
+  }
+  
+  .grid-item {
+    height: 100%;
+    padding: 10px; /* Adjust padding as needed */
+    display: flex; /* To make children expand to full height */
+    align-items: stretch; /* Stretch children to fill their container */
+    transition: all 0.3s ease; /* Add a smooth transition effect */
+    border-radius: 0; /* Initial border radius */
+  }
+
+  .grid-item:hover {
+    border-radius: 25px;
+  }
+  
+  app-verse-of-the-day,
+  app-next-read,
+  app-verses,
+  app-books {
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+  

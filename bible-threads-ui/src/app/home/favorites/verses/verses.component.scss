@@ -2,3 +2,16 @@ mat-card {
     background-color: #595959;
     max-height: 224px;
 }
+
+mat-form-field {
+    max-width: 100%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns, adjust as needed */
+    gap: 10px; /* Gap between columns, adjust as needed */
+  }
+  
+
+  

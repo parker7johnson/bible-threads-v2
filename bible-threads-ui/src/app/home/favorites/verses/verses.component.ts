@@ -21,7 +21,8 @@ export class VersesComponent {
           bookName : this.parseRef(verseRef),
           bookNumber : this.parseChapter(verse)
         });
-    } 
+    }
+    this.addedVerse = ''; 
   }
 
   isValidLength() {

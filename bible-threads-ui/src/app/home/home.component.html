@@ -4,7 +4,7 @@
           <mat-card-title>Welcome Back , {{username}} </mat-card-title>
           <mat-card-subtitle>Subtitle</mat-card-subtitle>
         </mat-card-header>
-          <mat-card-content fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px">
+          <!-- <mat-card-content fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px">
             <div class="row-div" fxFlex="50%" fxFlex.xs="100%" style="height: 100%;">
                 <div class="list-sides" fxLayout="row" style="height: 100%;">
                     <app-books fxFlex="50%" style="height: 100%;"></app-books>
@@ -15,16 +15,32 @@
                 <div class="row-div" fxFlex="50%" fxFlex.xs="100%" style="height: 254px;">
                     <app-grateful style="height: 100%;"></app-grateful>
                 </div>
-            </mat-card-content>
+          </mat-card-content> -->
 
-            <mat-card-content fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px" style="padding-top: 15px;">
+          <!-- <mat-card-content fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px" style="padding-top: 15px;">
                 <div class="row-div" fxFlex="50%" fxFlex.xs="100%" style="height: 254px;">
                 <app-verse-of-the-day style="height: 100%;"></app-verse-of-the-day>
                 </div>
                 <div class="row-div" fxFlex="50%" fxFlex.xs="100%" style="height: 254px;">
                 <app-next-read style="height: 100%;"></app-next-read>
                 </div>
-            </mat-card-content>            
+          </mat-card-content>             -->
+
+          <div class="grid-container">
+            <div class="grid-item">
+              <app-verse-of-the-day></app-verse-of-the-day>
+            </div>
+            <div class="grid-item">
+              <app-next-read></app-next-read>
+            </div>
+            <div class="grid-item">
+              <app-verses></app-verses>
+            </div>
+            <div class="grid-item">
+              <app-books></app-books>
+            </div>
+          </div>
+          
         <mat-card-actions>
           <!-- Action buttons go here -->
           <button mat-button style="color : white">Button 1</button>

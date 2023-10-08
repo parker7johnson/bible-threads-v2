@@ -1,10 +1,11 @@
 <mat-toolbar color="primary">
+    <div class="divider invisible"></div>
     <div class="nav-link">
         <button mat-button (click)="navigateToLanding()">
             <mat-icon style="font-size: 20px;">home</mat-icon>
             HOME
         </button>
-        </div>
+    </div>
     <div class="divider"></div>
     <div class="nav-link">
         <button mat-button (click)="navigateToDiscover()">
@@ -42,11 +43,14 @@
     </div>
     <div class="divider"></div>
     <div class="user-container">
-        <button mat-icon-button>
-            <mat-icon>account_circle</mat-icon>
+        <button matTooltip="My Account" mat-icon-button>
+            <mat-icon >account_circle</mat-icon>
         </button>
         <button mat-icon-button>
             <mat-icon>settings</mat-icon>
+        </button>
+        <button matTooltip="Logout" mat-icon-button (click)="onLogout()">
+            <mat-icon >logout</mat-icon>
         </button>
     </div>
     <!-- Add other toolbar content here if needed -->

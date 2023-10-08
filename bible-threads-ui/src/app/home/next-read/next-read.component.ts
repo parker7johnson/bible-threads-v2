@@ -6,18 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./next-read.component.scss']
 })
 export class NextReadComponent {
-  notes: string[] = [];
-  newNote: string = '';
+  readingList: string[] = [];
+  nextRead: string = '';
 
-  addNote() {
-    if (this.newNote.trim()) {
-      this.notes.push(this.newNote);
-      this.newNote = '';
+  addReadingItem() {
+    if (this.nextRead.trim()) {
+      this.readingList.push(this.nextRead);
+      this.nextRead = '';
     }
-    console.log(this.notes)
+    console.log(this.readingList)
   }
 
   deleteItem(index : any) {
-    this.notes.splice(index, 1);
+    this.readingList.splice(index, 1);
   }
 }

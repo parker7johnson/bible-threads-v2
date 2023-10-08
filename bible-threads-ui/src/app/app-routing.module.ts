@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { ReadComponent } from './read/read.component';
 import { DiscoverComponent } from './discover/discover.component';
 import { LearnComponent } from './learn/learn.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path : 'login',
     component : LoginComponent,
+  },
+  {
+    path : 'register',
+    component : RegisterComponent
   },
   {
     path : 'landing',

@@ -1,0 +1,33 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-card {
+    width: 300px;
+    height: 400px;
+    text-align: center;
+    padding: 20px;
+}
+
+.third-party-login {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Style the Google button */
+.third-party-login button:nth-child(1) {
+    background-color: #4285F4;
+    color: #fff;
+    margin-right: 10px;
+}
+
+/* Style the GitHub button */
+.third-party-login button:nth-child(2) {
+    padding-left: 10px;
+    background-color: #333;
+    color: #fff;
+}
